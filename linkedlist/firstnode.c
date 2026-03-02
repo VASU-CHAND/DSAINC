@@ -10,7 +10,43 @@ void linkedlisttraversal(struct Node*ptr){
         ptr=ptr->next;
     }
 }
+// to insert element at the first
+struct Node* insertatfirst(struct Node*head,int data){
+    struct Node*ptr=(struct Node*)malloc(sizeof(struct Node));
+    ptr->next=head;
+    ptr->data=data;
+    head=ptr;
+    return head;
+}
+    // to inset in between 
+    struct Node* insertinbw(struct Node*head,int data,int index){
+        struct Node*ptr=(struct Node*)malloc(sizeof(struct Node));
+        struct Node*p=head;
+        int i=0;
+        while(i!=index-1){
+            p=p->next;
+        ptr->data=data;
+        ptr->next=p->next;
+        p->next=ptr;
+        return head;
 
+        }
+        
+
+}
+// insert in end
+struct Node* insertatend(struct Node*head,int data){
+    struct Node*ptr=(struct Node*)malloc(sizeof(struct Node));
+    ptr->data=data;
+    struct Node*p=head;
+    while(p->next!=NULL){
+        p=p->next;
+    }
+p->next=ptr;
+ptr->next=NULL;
+return head;
+}
+// insert after a node
 
 int main(){
     struct Node*head;
@@ -29,8 +65,8 @@ int main(){
     // terminate the list at the third node
     third->data=66;
     third->next=NULL;
-    
    linkedlisttraversal(head);
+    head=insertatfirst(head , 21);
+    linkedlisttraversal(head);
     return 0;
-
 }
