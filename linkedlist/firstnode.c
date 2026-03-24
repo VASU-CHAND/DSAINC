@@ -67,6 +67,7 @@ int main(){
     third->next=NULL;
    linkedlisttraversal(head);
     head=insertatfirst(head , 21);
+    printf(" \n");
     linkedlisttraversal(head);
     return 0;
 }

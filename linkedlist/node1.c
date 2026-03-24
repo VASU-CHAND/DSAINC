@@ -13,11 +13,19 @@ int main(){
     n1->next=n2;
     n2->data=20;
     n2->next=NULL;
+    // insert at beggining
+    struct Node*new=(struct Node*)malloc(sizeof(struct Node));
+    new->data=5;
+    new->next=n1;
+   n1=new;
+
     struct Node*temp=n1;
       while(temp!=NULL){
         printf("Element:%d\n",temp->data);
         temp=temp->next;
     }
+
+
     free(n1);
     free(n2);
     free(temp);
